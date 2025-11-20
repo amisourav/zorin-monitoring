@@ -1,0 +1,21 @@
+global:
+  resolve_timeout: 5m
+
+route:
+  group_by: ['alertname']
+  group_wait: 10s
+  group_interval: 10s
+  repeat_interval: 1h
+  receiver: 'email-slack' # Or another receiver name
+
+receivers:
+  - name: 'email-slack'
+    # Configure your notification channels here (e.g., email, Slack, PagerDuty).
+    # Example for email (requires an SMTP server):
+    # email_configs:
+    #   - to: 'your-email@example.com'
+    #     from: 'alert@example.com'
+    #     smarthost: 'smtp.example.com:465'
+    #     auth_username: 'alert@example.com'
+    #     auth_password: 'password'
+
